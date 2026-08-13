@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12BA80CCDE694D88AFE09D56 /* StudioDisplayControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A993B1DE63C4F7690D29DD8 /* StudioDisplayControlApp.swift */; };
+		90F57232DDCF473BA9AD9F36 /* DisplayServicesBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B55DC01474399BA3C1286 /* DisplayServicesBridge.swift */; };
+		3E171AA1DC054DF8AED4233C /* StudioDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425B161A59A74A8EA303254C /* StudioDisplayManager.swift */; };
+		EDC2AD8BA4E64A6699BD3F08 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236F55D4DF5447DB9A42F3D0 /* MenuBarView.swift */; };
+		BEF7C3654A0246A68F592101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A1709D32B6474A8A0E5E9A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ACA2B0315C204346845C6F87 /* StudioDisplayControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudioDisplayControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A993B1DE63C4F7690D29DD8 /* StudioDisplayControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioDisplayControlApp.swift; sourceTree = "<group>"; };
+		3A8B55DC01474399BA3C1286 /* DisplayServicesBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayServicesBridge.swift; sourceTree = "<group>"; };
+		425B161A59A74A8EA303254C /* StudioDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioDisplayManager.swift; sourceTree = "<group>"; };
+		236F55D4DF5447DB9A42F3D0 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		88A1709D32B6474A8A0E5E9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		013085766D3B4977BADD3850 /* StudioDisplayControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudioDisplayControl.entitlements; sourceTree = "<group>"; };
+		CE039751B8E745F9A26F85E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D9771F1242F40F89C61CCC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FC5532F8FE14D28BBA216E9 = {
+			isa = PBXGroup;
+			children = (
+				75A2BD318B654C45B1E80A13 /* StudioDisplayControl */,
+				EB12133BF20547EFB85F8E07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB12133BF20547EFB85F8E07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACA2B0315C204346845C6F87 /* StudioDisplayControl.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75A2BD318B654C45B1E80A13 /* StudioDisplayControl */ = {
+			isa = PBXGroup;
+			children = (
+				9A993B1DE63C4F7690D29DD8 /* StudioDisplayControlApp.swift */,
+				3A8B55DC01474399BA3C1286 /* DisplayServicesBridge.swift */,
+				425B161A59A74A8EA303254C /* StudioDisplayManager.swift */,
+				236F55D4DF5447DB9A42F3D0 /* MenuBarView.swift */,
+				88A1709D32B6474A8A0E5E9A /* Assets.xcassets */,
+				013085766D3B4977BADD3850 /* StudioDisplayControl.entitlements */,
+				CE039751B8E745F9A26F85E2 /* Info.plist */,
+			);
+			path = StudioDisplayControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4875E9984EF4F7FBDD133E1 /* StudioDisplayControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 708708DD44084D10A78E58BB /* Build configuration list for PBXNativeTarget "StudioDisplayControl" */;
+			buildPhases = (
+				7CCBB8B8741F4913A71FA447 /* Sources */,
+				9D9771F1242F40F89C61CCC7 /* Frameworks */,
+				7FC1E22A009B4708AF229827 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StudioDisplayControl;
+			productName = StudioDisplayControl;
+			productReference = ACA2B0315C204346845C6F87 /* StudioDisplayControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97C0D66042D74B2EB1803B6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					D4875E9984EF4F7FBDD133E1 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 565B1933BAE344BDAB1887DF /* Build configuration list for PBXProject "StudioDisplayControl" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FC5532F8FE14D28BBA216E9;
+			productRefGroup = EB12133BF20547EFB85F8E07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4875E9984EF4F7FBDD133E1 /* StudioDisplayControl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FC1E22A009B4708AF229827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF7C3654A0246A68F592101 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CCBB8B8741F4913A71FA447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12BA80CCDE694D88AFE09D56 /* StudioDisplayControlApp.swift in Sources */,
+				90F57232DDCF473BA9AD9F36 /* DisplayServicesBridge.swift in Sources */,
+				3E171AA1DC054DF8AED4233C /* StudioDisplayManager.swift in Sources */,
+				EDC2AD8BA4E64A6699BD3F08 /* MenuBarView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C80664A331D4CE2A399B385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		A17A0896C5154920BDAE56B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		7607DA842B9F4D1382A86DDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StudioDisplayControl/StudioDisplayControl.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = StudioDisplayControl/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.StudioDisplayControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		BBF4C958F055452EA9182C3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StudioDisplayControl/StudioDisplayControl.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = StudioDisplayControl/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.StudioDisplayControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		565B1933BAE344BDAB1887DF /* Build configuration list for PBXProject "StudioDisplayControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C80664A331D4CE2A399B385 /* Debug */,
+				A17A0896C5154920BDAE56B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		708708DD44084D10A78E58BB /* Build configuration list for PBXNativeTarget "StudioDisplayControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7607DA842B9F4D1382A86DDD /* Debug */,
+				BBF4C958F055452EA9182C3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97C0D66042D74B2EB1803B6F /* Project object */;
+}
