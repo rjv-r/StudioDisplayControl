@@ -2,13 +2,10 @@ import AppKit
 import Combine
 import CoreGraphics
 import Foundation
-import IOKit
 
 @MainActor
 final class StudioDisplayManager: ObservableObject {
 
-    /// Apple's registered vendor ID for its own displays.
-    private static let appleVendorID: UInt32 = 0x05AC
     private static let nameHints = ["studio display", "cinema"]
 
     @Published private(set) var studioDisplay: CGDirectDisplayID?
@@ -29,58 +26,23 @@ final class StudioDisplayManager: ObservableObject {
     // MARK: - Detection
 
     func rescan() {
-        let found = Self.activeDisplays().first { id in
-            Self.isStudioDisplay(id)
-        }
-        studioDisplay = found
-        displayName = found.flatMap { Self.name(for: $0) } ?? "Not Found"
-        if let found, let current = DisplayServicesBridge.getBrightness(for: found) {
+        let found = Self.matchingScreen()
+        studioDisplay = found?.displayID
+        displayName = found?.name ?? "Not Found"
+        if let id = found?.displayID, let current = DisplayServicesBridge.getBrightness(for: id) {
             brightness = current
         }
     }
 
-    private static func activeDisplays() -> [CGDirectDisplayID] {
-        var displayCount: UInt32 = 0
-        CGGetActiveDisplayList(0, nil, &displayCount)
-        guard displayCount > 0 else { return [] }
-        var displays = [CGDirectDisplayID](repeating: 0, count: Int(displayCount))
-        CGGetActiveDisplayList(displayCount, &displays, &displayCount)
-        return displays
-    }
-
-    private static func isStudioDisplay(_ id: CGDirectDisplayID) -> Bool {
-        guard CGDisplayVendorNumber(id) == appleVendorID else { return false }
-        guard let name = name(for: id)?.lowercased() else { return false }
-        return nameHints.contains { name.contains($0) }
-    }
-
-    private static func name(for id: CGDirectDisplayID) -> String? {
-        let vendorID = CGDisplayVendorNumber(id)
-        let productID = CGDisplayModelNumber(id)
-
-        var iterator: io_iterator_t = 0
-        guard IOServiceGetMatchingServices(
-            kIOMainPortDefault,
-            IOServiceMatching("IODisplayConnect"),
-            &iterator
-        ) == KERN_SUCCESS else { return nil }
-        defer { IOObjectRelease(iterator) }
-
-        var service = IOIteratorNext(iterator)
-        while service != 0 {
-            defer { service = IOIteratorNext(iterator) }
-
-            guard let info = IODisplayCreateInfoDictionary(
-                service,
-                IOOptionBits(kIODisplayOnlyPreferredName)
-            )?.takeRetainedValue() as? [String: Any] else { continue }
-
-            let entryVendorID = info[kDisplayVendorID] as? UInt32
-            let entryProductID = info[kDisplayProductID] as? UInt32
-            guard entryVendorID == vendorID, entryProductID == productID else { continue }
-
-            guard let names = info[kDisplayProductName] as? [String: String] else { continue }
-            return names.values.first
+    /// `CGDisplayVendorNumber`/`IOServiceMatching("IODisplayConnect")` are unreliable on
+    /// Apple Silicon (return static/non-unique values, and the IOKit service class is
+    /// often unpopulated). `NSScreen.localizedName` is the stable, public source of truth.
+    private static func matchingScreen() -> (displayID: CGDirectDisplayID, name: String)? {
+        for screen in NSScreen.screens {
+            let name = screen.localizedName
+            guard nameHints.contains(where: { name.lowercased().contains($0) }) else { continue }
+            guard let number = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber else { continue }
+            return (CGDirectDisplayID(number.uint32Value), name)
         }
         return nil
     }

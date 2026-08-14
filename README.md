@@ -9,7 +9,7 @@ The Studio Display has no public power API and doesn't speak DDC/CI, so there's 
 - **Brightness** is controlled via Apple's private, undocumented `DisplayServices.framework` (`DisplayServicesGetBrightness` / `DisplayServicesSetBrightness`), loaded at runtime with `dlopen`/`dlsym` so the app degrades gracefully if Apple changes or removes these symbols in a future macOS release.
 - **"Off"** triggers macOS display sleep (equivalent to `pmset displaysleepnow`), which blanks the panel — the closest real equivalent to powering it off, and reversible with any key press or mouse movement.
 
-The display is detected specifically (not just "any external display") by matching Apple's vendor ID (`0x05AC`) and a "Studio Display" name match via IOKit's display registry.
+The display is detected specifically (not just "any external display") by matching `NSScreen.localizedName` against "Studio Display". (The classic approach — vendor ID via `CGDisplayVendorNumber` plus IOKit's `IODisplayConnect` registry — is broken on Apple Silicon: the vendor API returns non-unique values and the IOKit service class is unpopulated.)
 
 ## Features
 
